@@ -2,6 +2,7 @@
 
 import Body from '@/app/_components/Body';
 import RestaurantCard from '@/app/_components/RestaurantCard';
+import Search from '@/app/_icons/Search.icon';
 import bestDeal from '@/utils/bestDeal';
 import filterRestaurants from '@/utils/filterRestaurants';
 import sortRestaurants from '@/utils/sortRestaurants';
@@ -18,9 +19,12 @@ function RestaurantList({ restaurants }: Props) {
     return (
         <div className="relative flex flex-col overflow-hidden">
             <div className="bg-white py-4 border-b-1 border-b-gray-200">
-                <div className="flex gap-4 max-w-3xl mx-auto px-8">
-                    <div>A</div>
+                <div className="flex gap-4 max-w-3xl mx-auto px-4">
+                    <div>
+                        <Search size={24} />
+                    </div>
                     <input
+                        aria-label="Filter restaurants"
                         className="w-full focus-visible:outline-none"
                         placeholder="e.g. chinese, pizza"
                         value={search}

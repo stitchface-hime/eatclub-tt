@@ -1,5 +1,6 @@
 import RestaurantDetails from '@/app/[slug]/_components/RestaurantDetails';
 import Body from '@/app/_components/Body';
+import ArrowBack from '@/app/_icons/ArrowBack.icon';
 import Link from 'next/link';
 
 interface Props {
@@ -16,9 +17,12 @@ async function RestaurantPage({ params }: Props) {
     return (
         <Body>
             <div className="overflow-y-auto w-full">
-                <div className="px-8 py-4">
-                    <Link href="/" className="flex gap-4">
-                        <div>B</div>Back
+                <div className="p-4">
+                    <Link href="/" className="inline-flex gap-4">
+                        <div>
+                            <ArrowBack size={24} />
+                        </div>
+                        Back
                     </Link>
                 </div>
                 {restaurant ? (

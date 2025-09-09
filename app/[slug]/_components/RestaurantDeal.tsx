@@ -22,7 +22,10 @@ function RestaurantDeal({ deal }: Props) {
                 </div>
             </div>
             <div className="flex flex-col justify-center">
-                <button className="border-red-700 border-1 text-red-700 rounded-full px-6 py-2">
+                <button
+                    type="button"
+                    className="border-red-700 border-1 text-red-700 rounded-full px-6 py-2"
+                >
                     Redeem
                 </button>
             </div>

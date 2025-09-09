@@ -6,6 +6,5 @@ export default async function Home() {
     const data = await fetch('https://eccdn.com.au/misc/challengedata.json');
     const parsedData = (await data.json()) as Response;
 
-    console.log(parsedData);
     return <RestaurantList restaurants={parsedData.restaurants} />;
 }

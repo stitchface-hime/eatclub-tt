@@ -11,9 +11,9 @@ function RestaurantAction({ graphic, label }: Props) {
     return (
         <button
             type="button"
-            className="flex-1 cursor-pointer p-4 flex flex-col justify-center"
+            className="cursor-pointer p-4 flex flex-col justify-center items-center"
         >
-            <div>{graphic}</div>
+            {graphic}
             <div className="text-sm">{label}</div>
         </button>
     );

@@ -1,4 +1,5 @@
 import RestaurantImage from '@/app/_components/RestaurantImage';
+import Favorite from '@/app/_icons/Favorite.icon';
 import getDealTimeString from '@/utils/getDealTimeString';
 import isTimedDeal from '@/utils/isTimedDeal';
 
@@ -18,9 +19,9 @@ function RestaurantCard({
     featuredDeal,
 }: Props) {
     return (
-        <Link href={`/${objectId}`}>
-            <div className="flex flex-row ">
-                <div className="flex flex-col w-full">
+        <div className="flex flex-row ">
+            <div className="flex flex-col w-full">
+                <Link href={`/${objectId}`}>
                     <div className="relative p-2 h-60">
                         <RestaurantImage src={imageLink} alt={name} rounded />
                         {featuredDeal && (
@@ -36,21 +37,31 @@ function RestaurantCard({
                             </div>
                         )}
                     </div>
-                    <div className="flex flex-row">
-                        <div className="p-2 w-full">
-                            <h1 className="text-lg font-bold">{name}</h1>
-                            <div className="text-gray-600">
-                                {address1}, {suburb}
-                            </div>
-                            <div className="text-xs font-bold text-gray-600">
-                                {cuisines.join(', ')}
-                            </div>
+                </Link>
+
+                <div className="flex flex-row">
+                    <Link className="p-2 w-full" href={`/${objectId}`}>
+                        <h1 className="text-lg font-bold">{name}</h1>
+                        <div className="text-gray-600">
+                            {address1}, {suburb}
                         </div>
-                        <div>F</div>
+                        <div className="text-xs font-bold text-gray-600">
+                            {cuisines.join(', ')}
+                        </div>
+                    </Link>
+
+                    <div>
+                        <button
+                            type="button"
+                            className="p-2 cursor-pointer"
+                            aria-label="Favorite"
+                        >
+                            <Favorite size={24} />
+                        </button>
                     </div>
                 </div>
             </div>
-        </Link>
+        </div>
     );
 }
 
