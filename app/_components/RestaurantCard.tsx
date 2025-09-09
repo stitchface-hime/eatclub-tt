@@ -1,5 +1,6 @@
+import RestaurantImage from '@/app/_components/RestaurantImage';
 import isTimedDeal from '@/utils/isTimedDeal';
-import Image from 'next/image';
+
 import Link from 'next/link';
 
 interface Props extends Omit<Restaurant, 'open' | 'close' | 'deals'> {
@@ -20,14 +21,9 @@ function RestaurantCard({
             <div className="flex flex-row ">
                 <div className="flex flex-col w-full">
                     <div className="relative p-2 h-60">
-                        <Image
-                            className="rounded-md"
-                            src={imageLink}
-                            alt={name}
-                            fill={true}
-                        />
+                        <RestaurantImage src={imageLink} alt={name} />
                         {featuredDeal && (
-                            <div className="relative inline-block p-1 rounded-sm bg-red-600 text-white">
+                            <div className="relative inline-block px-2 py-1 rounded-sm bg-red-700 text-white">
                                 <div className="font-bold">{`${
                                     featuredDeal.discount
                                 }% off${
