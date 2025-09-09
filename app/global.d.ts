@@ -9,8 +9,8 @@ interface Restaurant {
     suburb: string;
     cuisines: string[];
     imageLink: string;
-    open?: string;
-    close?: string;
+    open: string;
+    close: string;
     deals: Deal[];
 }
 

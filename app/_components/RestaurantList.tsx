@@ -17,7 +17,7 @@ function RestaurantList({ restaurants }: Props) {
 
     return (
         <div className="relative flex flex-col overflow-hidden">
-            <div className="bg-white py-4 border-b-1">
+            <div className="bg-white py-4 border-b-1 border-b-gray-200">
                 <div className="flex gap-4 max-w-3xl mx-auto px-8">
                     <div>A</div>
                     <input
@@ -28,7 +28,7 @@ function RestaurantList({ restaurants }: Props) {
                     />
                 </div>
             </div>
-            <div className="overflow-y-auto py-4">
+            <div className="overflow-y-auto p-4">
                 <Body>
                     <div className="w-full grid grid-cols-[repeat(auto-fill,minmax(320px,1fr))] gap-x-8 gap-y-4">
                         {results.length === 0
